@@ -15,7 +15,7 @@ const io = new Server(server, {
   cors: { origin: FRONTEND_URL, methods: ["GET", "POST"] },
 });
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: "https://collabnotes-ten.vercel.app" }));
 app.use("/notes", noteRoutes);
 
 initializeDB();
